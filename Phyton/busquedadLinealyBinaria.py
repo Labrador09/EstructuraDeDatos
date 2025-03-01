@@ -19,16 +19,4 @@ def busqueda_binaria(lista, objetivo):
 lista_numeros = [1, 3, 5, 7, 9, 11, 13]
 print(busqueda_lineal(lista_numeros, 7))  
 print(busqueda_binaria(lista_numeros, 7))  
-import time
-
-lista_grande = list(range(1, 1000000))
-
-inicio = time.time()
-busqueda_lineal(lista_grande, 999999)
-print("Tiempo Lineal:", time.time() - inicio)
-
-
-inicio = time.time()
-busqueda_binaria(lista_grande, 999999)
-print("Tiempo Binario:", time.time() - inicio)
 
