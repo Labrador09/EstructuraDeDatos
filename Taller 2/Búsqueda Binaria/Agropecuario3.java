@@ -1,5 +1,6 @@
 import java.util.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 class Pedido implements Comparable<Pedido> { 
@@ -17,7 +18,28 @@ class Pedido implements Comparable<Pedido> {
     }
 }
 
+
 public class Agropecuario3 { // Corregir nombre de la clase
+    public static void encabezadoPgm(){
+        // Datos del encabezado
+       String nombre = "Miguel Angel Labrador Valencia";
+       String campus = "Campus Cali, U. Cooperativa de Colombia";
+       String repositorioGit = "https://github.com/Labrador09/EstructuraDeDatos/tree/805736ea8f232cef6433d1453d46b6e660516545/Sesion%204%20-%20trabajo%20en%20clase";
+    
+       // Obtener la fecha y hora actual
+       LocalDateTime ahora = LocalDateTime.now();
+       DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+       String fechaHora = ahora.format(formateador);
+    
+       // Imprimir el encabezado
+       System.out.println("+----------------------------------------");
+       System.out.println("| 👤 Nombre: " + nombre);
+       System.out.println("| 🎓 Campus: " + campus);
+       System.out.println("| 📅 Fecha y hora: " + fechaHora);
+       System.out.println("| 📂 Repositorio Git: " + repositorioGit);
+       System.out.println("+----------------------------------------");
+       System.out.println();
+    }  
     public static int busquedaBinaria(List<Pedido> pedidos, LocalDate fechaBuscada) {
         int izquierda = 0, derecha = pedidos.size() - 1;
         while (izquierda <= derecha) {
@@ -32,6 +54,7 @@ public class Agropecuario3 { // Corregir nombre de la clase
     }
 
     public static void main(String[] args) {
+        encabezadoPgm();
         Scanner scanner = new Scanner(System.in);
         List<Pedido> pedidos = new ArrayList<>();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

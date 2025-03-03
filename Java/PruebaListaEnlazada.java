@@ -1,10 +1,12 @@
+package Java;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
- 
-public class Ejer2 {
-    public static void encabezadoPgm(){
-         // Datos del encabezado
+
+public class PruebaListaEnlazada {
+
+    public static void encabezadoPgm() {
+        // Datos del encabezado
         String nombre = "Miguel Angel Labrador Valencia";
         String campus = "Campus Cali, U. Cooperativa de Colombia";
         String repositorioGit = "https://github.com/Labrador09/EstructuraDeDatos/tree/805736ea8f232cef6433d1453d46b6e660516545/Sesion%204%20-%20trabajo%20en%20clase";
@@ -22,27 +24,26 @@ public class Ejer2 {
         System.out.println("| 📂 Repositorio Git: " + repositorioGit);
         System.out.println("+----------------------------------------");
         System.out.println();
-    }  
-    
-    public static String obtenerPrimerElemento(String[] arr) {
-        return arr[0];
     }
     public static void main(String[] args) {
+
+        ListaEnlazadaTransacciones lista = new ListaEnlazadaTransacciones();
+
         encabezadoPgm();
-        
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Ingrese el tamaño del array (número de routers activos):");
-        int n = scanner.nextInt();
-        scanner.nextLine();
-        String[] arr = new String[n];
- 
-        System.out.println("Ingrese el numero de nodo de los routers activos");
-        for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextLine();
-        }
- 
-        System.out.println("El primer nodo de la lista de routers activos es: " + obtenerPrimerElemento(arr));
-        scanner.close();
+
+        lista.agregarTransaccion("T001", 500.0, "deposito");
+
+        lista.agregarTransaccion("T002", 200.0, "retiro");
+
+        lista.agregarTransaccion("T003", 1000.0, "deposito");
+
+        System.out.println("Transacciones pendientes:");
+        lista.mostrarTransacciones();
+        Transaccion procesada = lista.procesarTransaccion();
+        System.out.println("\nTransacción procesada: ID: " + procesada.getId());
+        System.out.println("\nTransacciones pendientes:");
+        lista.mostrarTransacciones();
     }
 }
+    
+

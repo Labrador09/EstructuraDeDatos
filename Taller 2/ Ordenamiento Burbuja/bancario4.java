@@ -70,8 +70,8 @@ public class bancario4 {
         for (int num : arr) {
             System.out.print(num + "\n");
         }
-        System.out.println("\nEl ingreso " + obtenerPrimerElemento(arr)+"C°" + " tiene menor ingresos");
-        System.out.println("El ingreso " + maximo(arr)+" C°" + " tiene Mayor ingresos");
+        System.out.println("\nEl ingreso " + obtenerPrimerElemento(arr)+" $" + " tiene menor ingresos");
+        System.out.println("El ingreso " + maximo(arr)+" $" + " tiene Mayor ingresos");
     }
 }
 

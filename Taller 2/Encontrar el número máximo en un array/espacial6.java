@@ -38,7 +38,7 @@ public class espacial6 {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int[] arr = new int[30];
+        int[] arr = new int[10];
  
         System.out.println("------------TEMPERATURAS EN UN MES EN LA LUNA-----------");
         for (int i = 0; i < 30; i++) {

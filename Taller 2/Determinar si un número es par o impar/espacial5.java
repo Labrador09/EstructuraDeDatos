@@ -29,6 +29,7 @@ public class espacial5 {
        System.out.println();
     }  
     public static void main(String[] args) {
+        encabezadoPgm();
         Scanner scanner = new Scanner(System.in);
         List<Integer> lotesPares = new ArrayList<>();
         List<Integer> lotesImpares = new ArrayList<>();
