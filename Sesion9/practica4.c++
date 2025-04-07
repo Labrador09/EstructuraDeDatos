@@ -1,9 +1,34 @@
 #include <iostream>
-#include <iomanip>
-#include <ctime>
-#include <stack>
+#include <string>
 using namespace std;
-
+ 
+struct Especie {
+    string nombre;
+    Especie* izq;
+    Especie* der;
+};
+ 
+Especie* nuevaEspecie(string nombre) {
+    Especie* e = new Especie();
+    e->nombre = nombre;
+    e->izq = e->der = nullptr;
+    return e;
+}
+ 
+Especie* insertar(Especie* raiz, string nombre) {
+    if (raiz == nullptr) return nuevaEspecie(nombre);
+    if (nombre < raiz->nombre) raiz->izq = insertar(raiz->izq, nombre);
+    else raiz->der = insertar(raiz->der, nombre);
+    return raiz;
+}
+ 
+void inorden(Especie* raiz) {
+    if (raiz) {
+        inorden(raiz->izq);
+        cout << raiz->nombre << " ";
+        inorden(raiz->der);
+    }
+}
 void encabezadoPgm() {
     // Datos del encabezado
     string nombre = "Miguel Angel Labrador Valencia";
@@ -24,17 +49,18 @@ void encabezadoPgm() {
     cout << "+----------------------------------------" << endl;
     cout << endl;
 }
-using namespace std;
  
 int main() {
     encabezadoPgm();
-    stack<string> acciones;
-    acciones.push("Escribir 'Hola'");
-    acciones.push("Agregar negrita");
-    acciones.push("Insertar imagen");
     
-    cout << "Última acción: " << acciones.top() << endl;
-    acciones.pop();
-    cout << "Deshacer... Ahora la última acción es: " << acciones.top() << endl;
+    Especie* raiz = nullptr;
+    raiz = insertar(raiz, "Tigre");
+    insertar(raiz, "Elefante");
+    insertar(raiz, "Mono");
+    insertar(raiz, "Cebra");
+    insertar(raiz, "Gorila");
+ 
+    cout << "Especies en orden alfabético: ";
+    inorden(raiz);
     return 0;
 }

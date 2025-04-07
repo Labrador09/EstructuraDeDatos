@@ -40,6 +40,7 @@ void factorial(int n) {
 }
  
 int main() {
+    encabezadoPgm();
     factorial(5); // Output: 120
     return 0;
 }

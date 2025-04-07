@@ -44,6 +44,7 @@ int evaluarPostfija(string expr) {
 }
  
 int main() {
+    encabezadoPgm();
     cout << evaluarPostfija("23+5*") << endl; // Output: 25
     return 0;
 }

@@ -1,10 +1,9 @@
 #include <iostream>
-#include <iomanip>
-#include <ctime>
+#include <vector>
+#include <queue>
 #include <stack>
 using namespace std;
-
-void encabezadoPgm() {
+ void encabezadoPgm() {
     // Datos del encabezado
     string nombre = "Miguel Angel Labrador Valencia";
     string campus = "Campus Cali, U. Cooperativa de Colombia";
@@ -24,17 +23,7 @@ void encabezadoPgm() {
     cout << "+----------------------------------------" << endl;
     cout << endl;
 }
-using namespace std;
  
 int main() {
     encabezadoPgm();
-    stack<string> acciones;
-    acciones.push("Escribir 'Hola'");
-    acciones.push("Agregar negrita");
-    acciones.push("Insertar imagen");
-    
-    cout << "Última acción: " << acciones.top() << endl;
-    acciones.pop();
-    cout << "Deshacer... Ahora la última acción es: " << acciones.top() << endl;
-    return 0;
 }
