@@ -3,5 +3,13 @@
     // Mantenga el puntero para ver las descripciones de los existentes atributos.
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "M2Ejer2$PruebaListaMantenimiento",
+            "request": "launch",
+            "mainClass": "M2.M2Ejer2$PruebaListaMantenimiento",
+            "projectName": "EstructuraDeDatos_6ad683ee"
+        }
+    ]
 }
